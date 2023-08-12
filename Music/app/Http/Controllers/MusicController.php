@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use Illuminate\Http\Request;
 use App\Models\Music;
 class MusicController extends Controller
@@ -20,7 +21,8 @@ class MusicController extends Controller
      */
     public function create()
     {
-        return view('musics.create');
+        $authors = Author::all();
+        return view('musics.create', ['authors' => $authors]);
     }
 
     /**
@@ -30,10 +32,10 @@ class MusicController extends Controller
     {
         $music =new Music();
         $music->name = $request->get('name');
-        $music->kingofmusic = $request->get('kingofmusic');
-        $music->author = $request->get('author');
+        $music->kindofmusic = $request->get('kindofmusic');
         $music->singer = $request->get('singer');
         $music->save();
+        $music->authors()->attach($request->authors);
         return redirect('musics');
     }
 
@@ -52,7 +54,8 @@ class MusicController extends Controller
     public function edit(string $id)
     {
         $music = Music::find($id);
-        return view('musics.edit', ['music' => $music]);
+        $authors = Author::all();
+        return view('musics.edit', ['music' => $music, 'authors' => $authors]);
     }
 
     /**
@@ -62,9 +65,9 @@ class MusicController extends Controller
     {
         $music = Music::find($id);
         $music->name = $request->get('name');
-        $music->kingofmusic = $request->get('kingofmusic');
-        $music->author = $request->get('author');
+        $music->kindofmusic = $request->get('kindofmusic');
         $music->singer = $request->get('singer');
+        $music->authors()->sync($request->authors);
         $music->save();
         return redirect('musics');
     }

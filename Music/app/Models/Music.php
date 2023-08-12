@@ -9,5 +9,10 @@ class Music extends Model
 {
     use HasFactory;
     protected $table = 'musics';
-    protected $fillable = ['name', 'kingofmusic', 'author', 'singer'];
+    protected $fillable = ['name', 'kindofmusic', 'singer'];
+    
+    public function authors()
+    {
+        return $this->belongsToMany(Author::class);
+    }
 }

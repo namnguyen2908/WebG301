@@ -9,7 +9,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="musics/create">Add new Music</a>
-                        <a class="dropdown-item" href="#">Add new Author</a>
+                        <a class="dropdown-item" href="authors/create">Add new Author</a>
                         <a class="dropdown-item" href="#">Add new Author</a>
                         <a class="dropdown-item" href="#">Add new Kind of music</a>
                     </div>
