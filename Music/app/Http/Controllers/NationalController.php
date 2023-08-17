@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\National;
 use Illuminate\Http\Request;
 
 class NationalController extends Controller
@@ -11,7 +12,8 @@ class NationalController extends Controller
      */
     public function index()
     {
-        //
+        $nationals = National::all();
+        return view('nationals.index', ['nationals' => $nationals]);
     }
 
     /**
@@ -19,7 +21,7 @@ class NationalController extends Controller
      */
     public function create()
     {
-        //
+        return view('nationals.create');
     }
 
     /**
@@ -27,7 +29,11 @@ class NationalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $national = new National();
+        $national->name= $request->get('name');
+        $national->area= $request->get('area');
+        $national->save();
+        return redirect('nationals/create');
     }
 
     /**
@@ -35,7 +41,8 @@ class NationalController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $national = National::find($id);
+        return view('nationals.show', ['national' => $national]);
     }
 
     /**
@@ -43,7 +50,8 @@ class NationalController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $national = National::find($id);
+        return view('nationals.edit', ['national' => $national]);
     }
 
     /**
@@ -51,7 +59,11 @@ class NationalController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $national = National::find($id);
+        $national->name= $request->get('name');
+        $national->area= $request->get('area');
+        $national->save();
+        return redirect('/nationals');
     }
 
     /**
@@ -59,6 +71,8 @@ class NationalController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $national = National::find($id);
+        $national->delete();
+        return redirect('/nationals');
     }
 }

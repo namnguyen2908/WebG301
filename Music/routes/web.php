@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\MusicController;
-
+use App\Http\Controllers\NationalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +21,4 @@ Route::get('/', function () {
 });
 Route::resource("/musics", MusicController::class);
 Route::resource("/authors", AuthorController::class);
+Route::resource("/nationals", NationalController::class);

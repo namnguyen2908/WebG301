@@ -20,6 +20,10 @@
                                         @endforeach
                                     </span>
                                 </div>
+
+                            </div>
+                            <div class="price d-flex flex-row align-items-center">
+                                <div class="ml-2"> <small class="dis-price">National: </small> <span>{{$music->national->name}}</span> </div>
                             </div>
                             <div class="price d-flex flex-row align-items-center">
                                 <div class="ml-2"> <small class="dis-price">Singer: </small> <span>{{$music->singer}}</span> </div>

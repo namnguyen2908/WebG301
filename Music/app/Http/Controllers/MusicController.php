@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use Illuminate\Http\Request;
 use App\Models\Music;
+use App\Models\National;
+
 class MusicController extends Controller
 {
     /**
@@ -21,8 +23,9 @@ class MusicController extends Controller
      */
     public function create()
     {
+        $nationals = National::all();
         $authors = Author::all();
-        return view('musics.create', ['authors' => $authors]);
+        return view('musics.create', ['authors' => $authors, 'nationals' => $nationals]);
     }
 
     /**
@@ -34,6 +37,7 @@ class MusicController extends Controller
         $music->name = $request->get('name');
         $music->kindofmusic = $request->get('kindofmusic');
         $music->singer = $request->get('singer');
+        $music->national_id = $request->national_id;
         $music->save();
         $music->authors()->attach($request->authors);
         return redirect('musics');
@@ -54,8 +58,9 @@ class MusicController extends Controller
     public function edit(string $id)
     {
         $music = Music::find($id);
+        $nationals = National::all();
         $authors = Author::all();
-        return view('musics.edit', ['music' => $music, 'authors' => $authors]);
+        return view('musics.edit', ['music' => $music, 'authors' => $authors, 'nationals' => $nationals]);
     }
 
     /**
@@ -68,6 +73,7 @@ class MusicController extends Controller
         $music->kindofmusic = $request->get('kindofmusic');
         $music->singer = $request->get('singer');
         $music->authors()->sync($request->authors);
+        $music->national_id = $request->national;
         $music->save();
         return redirect('musics');
     }
