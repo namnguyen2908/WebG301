@@ -50,7 +50,11 @@
     <header>
         <nav class="navbar navbar-light  fixed-top ">
             <div class="container-fluid ">
-                <a class="navbar-brand "  href="http://127.0.0.1:8000/musics">MP3</a>
+                   <a class="navbar-brand "  href="http://127.0.0.1:8000/musics">
+                   <img src="https://i.pinimg.com/564x/0f/12/36/0f12361910c69aa7070464560af1c1a6.jpg" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+                   Kmusic
+
+                   </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>

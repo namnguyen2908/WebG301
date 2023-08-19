@@ -1,6 +1,6 @@
 <section class="">
   <!-- Footer -->
-  <footer class="bg-secondary text-white">
+  <footer class="bg-secondary text-white ">
     <!-- Grid container -->
     <div class="container p-4">
       <!--Grid row-->
