@@ -13,12 +13,15 @@
             @foreach ($authors as $author)
             <option value="{{$author->id}}">{{$author->name}}</option>
             @endforeach
-        </select><br>
+        </select>
+        <br>
+        <label for="" class="form-label" width = "200px" >National:</label><br>
         <select name="national_id" id="national_id">
             @foreach($nationals as $national)
             <option value="{{$national->id}}">{{$national->name}}</option>
             @endforeach
-        </select>
+        </select> 
+        <br>
         <label for="" class="form-label">Singer:</label>
         <input type="text" class="form-control" name="singer" id="singer" aria-describedby="helpId" placeholder="">
         <button type="submit" class="btn btn-primary">Submit</button>

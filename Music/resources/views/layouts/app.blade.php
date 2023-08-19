@@ -32,7 +32,7 @@
     @include('layouts.header')
   </header>
 
-  <div class="content" style="background-color: #f2f2f2;">
+  <div class="content" >
   <main>
     @yield('content')
   </main>
