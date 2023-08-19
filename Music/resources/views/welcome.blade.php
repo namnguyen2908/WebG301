@@ -17,28 +17,40 @@
   box-sizing: border-box;
 }
 
-@media(min-aspect-ratio: 16/9){
-  .banner video{
+@media(min-aspect-ratio: 16/9)
+{
+  .banner video
+  {
       width: 100%;
-      height: auto;
+      height:100%;
   }
 }
+.navbar-brand {
+    color: deepskyblue;
+}
+
 .navbar-toggler:hover {
     text-decoration: none;
     color: red;
+    
 }
+/* Tùy chỉnh màu của biểu tượng trong .navbar-toggler-icon */
+.navbar-toggler-icon {
+      background-color: purple; /* Màu nền biểu tượng */
+    }
 .nav-link:focus, .nav-link:hover {
     /* color: var(--bs-nav-link-hover-color); */
     color: deepskyblue;
 }
+
 </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-light bg-light fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="http://127.0.0.1:8000/musics">MP3</a>
+        <nav class="navbar navbar-light  fixed-top ">
+            <div class="container-fluid ">
+                <a class="navbar-brand "  href="http://127.0.0.1:8000/musics">MP3</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
