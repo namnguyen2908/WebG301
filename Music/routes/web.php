@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::resource("/musics", MusicController::class);
 Route::resource("/authors", AuthorController::class);
 Route::resource("/nationals", NationalController::class);
+Route::get('/search', MusicController::class . '@search');
