@@ -1,5 +1,5 @@
 @extends ('layouts.app')
-@section ('title', 'MP3')
+@section ('title', 'KMusic')
 @section ('content')
 <div class="table-responsive">
     <table class="table table-striped

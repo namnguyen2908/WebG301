@@ -1,5 +1,5 @@
 @extends ('layouts.app')
-@section ('title', 'ADD new Music')
+@section ('title', 'Edit Music')
 @section ('content')
 <form action="/musics/{{$music->id}}" method="POST">
     @csrf
