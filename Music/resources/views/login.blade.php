@@ -46,7 +46,8 @@ height: 100%;
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+        <orm action="/login" method="post">
+            @csrf
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p class="lead fw-normal mb-0 me-3">Sign in with</p>
             <button type="button" class="btn btn-primary btn-floating mx-1">
@@ -68,7 +69,7 @@ height: 100%;
 
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" name="name" id="form3Example3" class="form-control form-control-lg"
+            <input type="text" name="email" id="form3Example3" class="form-control form-control-lg"
               placeholder="Enter a valid email address" />
             <label class="form-label"  for="form3Example3">Email address</label>
           </div>
@@ -93,7 +94,10 @@ height: 100%;
 
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="submit" class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                 Login
+            </button>
+            
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register"
                 class="link-danger">Register</a></p>
           </div>
