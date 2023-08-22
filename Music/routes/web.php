@@ -23,5 +23,6 @@ Route::get('/', function () {
 Route::resource("/musics", MusicController::class);
 Route::resource("/authors", AuthorController::class);
 Route::resource("/nationals", NationalController::class);
-Route::resource("/music", CategoryController::class);
+
+Route::resource("/categorys", CategoryController::class);
 Route::get('/search', MusicController::class . '@search');
