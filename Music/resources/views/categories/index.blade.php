@@ -10,19 +10,17 @@
         <thead class="table-light">
             <tr>
                 <th>Name</th>
-                <th>National</th>
                 <th>Action</th>
             </tr>
         </thead>
-            @foreach ($nationals as $nationals)
+            @foreach ($categories as $categories)
             <tbody class="table-group-divider">
                 <tr class="table-primary" >
-                    <td>{{$nationals->name}}</td>
-                    <td>{{$nationals->area}}</td>
+                    <td>{{$categories->name}}</td>
                     <td>
-                        <a href="/nationals/{{$nationals->id}}" class="btn btn-info">Details</a>
-                        <a href="/nationals/{{$nationals->id}}/edit" class="btn btn-primary">Edit</a>
-                        <a> <form action="/nationals/{{$nationals->id}}" method="POST">
+                        <a href="/categories/{{$categories->id}}" class="btn btn-info">Details</a>
+                        <a href="/categories/{{$categories->id}}/edit" class="btn btn-primary">Edit</a>
+                        <a> <form action="/categories/{{$categories->id}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger mt-2" onclick="return confirm('Are you sure?')">Delete</button>

@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('musics', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('kindofmusic');
             $table->string('singer');
             $table->foreignId('national_id')->constrained('nationals');
+            $table->foreignId('category_id')->constrained('categories');
+            $table->string('description');
             $table->timestamps();
         });
     }

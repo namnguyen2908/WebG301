@@ -25,7 +25,7 @@ Route::resource("/musics", MusicController::class);
 Route::resource("/authors", AuthorController::class);
 Route::resource("/nationals", NationalController::class);
 
-Route::resource("/categorys", CategoryController::class);
+Route::resource("/categories", CategoryController::class);
 Route::get('/search', MusicController::class . '@search');
 Route::get('login', [AuthenticateController::class, 'loginIndex'])->name('login');
 Route::get('register', [AuthenticateController::class, 'registerIndex'])->name('register');

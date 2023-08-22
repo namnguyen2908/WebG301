@@ -9,7 +9,7 @@ class Music extends Model
 {
     use HasFactory;
     protected $table = 'musics';
-    protected $fillable = ['name', 'kindofmusic', 'singer', 'national_id'];
+    protected $fillable = ['name', 'kindofmusic', 'singer', 'national_id', 'category_id', 'description'];
     
     public function authors()
     {
@@ -19,5 +19,9 @@ class Music extends Model
     public function national()
     {
         return $this->belongsTo(National::class);
+    }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
