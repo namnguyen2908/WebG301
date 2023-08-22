@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Http\Request;
+
 class CategoryController extends Controller
 {
     /**
@@ -11,8 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categorys = Category::all();
-        return view('categorys.index' , ['categorys' => $categorys]);
+        $categories = Category::all();
+        return view('categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -20,7 +21,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categorys.create');
+        return view('categories.create');
     }
 
     /**
@@ -31,7 +32,7 @@ class CategoryController extends Controller
         $category = new Category();
         $category->name= $request->get('name');
         $category->save();
-        return redirect('categorys/create');
+        return redirect('categories/create');
     }
 
     /**
@@ -39,7 +40,8 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $category = Category::find($id);
+        return view('categories.show', ['category' => $category]);
     }
 
     /**
@@ -47,7 +49,8 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::find($id);
+        return view('categories.edit', ['category' => $category]);
     }
 
     /**
@@ -55,7 +58,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Category::find($id);
+        $category->name= $request->get('name');
+        $category->save();
+        return redirect('/categories');
     }
 
     /**
@@ -63,6 +69,8 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('/categories');
     }
 }

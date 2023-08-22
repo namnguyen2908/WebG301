@@ -8,37 +8,40 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/musics">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Create new
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/musics/create">Create new Song</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/authors/create">Create new Author</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/nationals/create">Create new National</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/categories/create">Create new Category</a></li>
+          </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Functions
+          Display
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/musics/create">Create Song</a></li>
+            <li><a class="dropdown-item" href="/musics">Songs</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/authors/create">Create Author</a></li>
+            <li><a class="dropdown-item" href="/authors">Authors</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Edit</a></li>
+            <li><a class="dropdown-item" href="/nationals">Nationals</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Edit</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Edit</a></li>
-          
+            <li><a class="dropdown-item" href="/categories">Categories</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
       </ul>
       <form class="d-flex" role="search" action="/search" type="get">
         <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      
     </div>
   </div>
 </nav>

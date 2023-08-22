@@ -10,7 +10,7 @@
         <thead class="table-light">
             <tr>
                 <th>Name</th>
-                <th>National</th>
+                <th>Area</th>
                 <th>Action</th>
             </tr>
         </thead>

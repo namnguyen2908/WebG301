@@ -6,6 +6,7 @@ use App\Models\Author;
 use Illuminate\Http\Request;
 use App\Models\Music;
 use App\Models\National;
+use App\Models\Category;
 
 class MusicController extends Controller
 {
@@ -24,8 +25,9 @@ class MusicController extends Controller
     public function create()
     {
         $nationals = National::all();
+        $categories = Category::all();
         $authors = Author::all();
-        return view('musics.create', ['authors' => $authors, 'nationals' => $nationals]);
+        return view('musics.create', ['authors' => $authors, 'nationals' => $nationals, 'categories' => $categories]);
     }
 
     /**
@@ -35,9 +37,10 @@ class MusicController extends Controller
     {
         $music =new Music();
         $music->name = $request->get('name');
-        $music->kindofmusic = $request->get('kindofmusic');
+        $music->category_id = $request->category_id;
         $music->singer = $request->get('singer');
         $music->national_id = $request->national_id;
+        $music->description = $request->get('description');
         $music->save();
         $music->authors()->attach($request->authors);
         return redirect('musics');
@@ -60,7 +63,8 @@ class MusicController extends Controller
         $music = Music::find($id);
         $nationals = National::all();
         $authors = Author::all();
-        return view('musics.edit', ['music' => $music, 'authors' => $authors, 'nationals' => $nationals]);
+        $categories = Category::all();
+        return view('musics.edit', ['music' => $music, 'authors' => $authors, 'nationals' => $nationals, 'categories' => $categories]);
     }
 
     /**
@@ -70,10 +74,11 @@ class MusicController extends Controller
     {
         $music = Music::find($id);
         $music->name = $request->get('name');
-        $music->kindofmusic = $request->get('kindofmusic');
+        $music->category_id = $request->category;
         $music->singer = $request->get('singer');
         $music->authors()->sync($request->authors);
         $music->national_id = $request->national;
+        $music->description = $request->get('description');
         $music->save();
         return redirect('musics');
     }
