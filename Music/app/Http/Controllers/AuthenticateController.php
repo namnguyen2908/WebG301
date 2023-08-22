@@ -10,4 +10,8 @@ class AuthenticateController extends Controller
     {
         return view('login');
     }
+    public function registerIndex()
+    {
+        return view('register');
+    }
 }
