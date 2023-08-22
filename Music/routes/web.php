@@ -1,10 +1,11 @@
 <?php
-
+use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\NationalController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::resource("/nationals", NationalController::class);
 
 Route::resource("/categorys", CategoryController::class);
 Route::get('/search', MusicController::class . '@search');
+Route::get('login', [AuthenticateController::class, 'loginIndex'])->name('login');
