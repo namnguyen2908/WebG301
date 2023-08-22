@@ -1,25 +1,60 @@
 @extends ('layouts.app')
 @section ('title', 'Details of '. $author->name)
 @section ('content')
-<div class="container mt-5 mb-5">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="product p-4">
-                                <h5 class="text-uppercase">Author: {{$author->name}}</h5>
-                                <div class="price d-flex flex-row align-items-center">
-                                    <div class="ml-2"> <small class="dis-price">Email: </small> <span>{{$author->email}}</span> </div>
-                                </div>
-                            </div>
-                            <p class="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
-                            <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Dowload</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="table-responsive">
+    <table class="table table-striped
+    table-hover	
+    table-borderless
+    table-primary
+    align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr class="table-primary">
+                <td>{{$author->name}}</td>
+                <td>{{$author->email}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="alert alert-primary" role="alert">
+        <strong>Songs related to the author:</strong>
     </div>
+    <div class="table-responsive">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            @foreach($author->musics as $musics)
+            <tbody>
+                <tr class="">
+                    <td scope="row">{{$musics->name}}</td>
+                    <td scope="row">
+                        @foreach($musics->authors as $author)
+                        {{$author->name}}<br>
+                        @endforeach
+                    </td>
+                    <td scope="row"><a href="/musics/{{$musics->id}}" class="btn btn-info">Details</a></td>
+                </tr>
+            </tbody>
+            @endforeach
+        </table>
+    </div>
+
 </div>
+<style>
+    .alert-primary {
+    --bs-alert-color: black;
+    --bs-alert-bg: cornsilk;
+    --bs-alert-border-color: blanchedalmond;
+}
+</style>
 @endsection

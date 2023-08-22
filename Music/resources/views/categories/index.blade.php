@@ -15,7 +15,7 @@
         </thead>
             @foreach ($categories as $categories)
             <tbody class="table-group-divider">
-                <tr class="table-primary" >
+                <tr class="table-primary">
                     <td>{{$categories->name}}</td>
                     <td>
                         <a href="/categories/{{$categories->id}}" class="btn btn-info">Details</a>

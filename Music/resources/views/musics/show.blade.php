@@ -32,7 +32,7 @@
                                 <div class="ml-2"> <small class="dis-price">Singer: </small> <span>{{$music->singer}}</span> </div>
                             </div>
                         </div>
-                        <p class="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
+                        <p class="about">Description: <br>{{$music->description}}</p>
                         <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Dowload</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
                     </div>
                 </div>
