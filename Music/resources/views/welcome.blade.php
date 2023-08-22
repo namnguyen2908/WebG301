@@ -78,7 +78,8 @@
     </header>
     <main>
         <div class="banner">
-            <video autoplay loop muted plays-inline>
+            <video autoplay loop playsinline>
+                <source src="{{URL('images/layout.mp4')}}">
                 <source src="{{URL('images/layout.mp4')}}">
             </video>
         </div>
