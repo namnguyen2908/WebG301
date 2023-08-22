@@ -87,4 +87,10 @@ class MusicController extends Controller
         $music->delete();
         return redirect('musics');
     }
+
+    public function search(){
+        $search = $_GET['search'];
+        $musics = Music::where('name', 'LIKE', '%'.$search.'%')->get(); 
+        return view('musics.search', ['musics' => $musics]);
+    }
 }
