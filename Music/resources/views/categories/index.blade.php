@@ -17,8 +17,8 @@
             <tbody class="table-group-divider">
                 <tr class="table-primary">
                     <td>{{$categories->name}}</td>
-                    <td>
-                        <a href="/categories/{{$categories->id}}" class="btn btn-info">Details</a>
+                    <td >
+                        
                         <a href="/categories/{{$categories->id}}/edit" class="btn btn-primary">Edit</a>
                         <a> <form action="/categories/{{$categories->id}}" method="POST">
                             @csrf

@@ -12,9 +12,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        if (!auth()->check()) {
-            return redirect('/login');
-        }
+        // if (!auth()->check()) {
+        //     return redirect('/login');
+        // }
         $categories = Category::all();
         return view('categories.index', ['categories' => $categories]);
     }
@@ -56,6 +56,9 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $category = Category::find($id);
         return view('categories.edit', ['category' => $category]);
     }
@@ -76,6 +79,9 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $category = Category::find($id);
         $category->delete();
         return redirect('/categories');

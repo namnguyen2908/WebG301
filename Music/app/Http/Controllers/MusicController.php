@@ -15,9 +15,9 @@ class MusicController extends Controller
      */
     public function index()
     {
-        if (!auth()->check()) {
-            return redirect('/login');
-        }
+        // if (!auth()->check()) {
+        //     return redirect('/login');
+        // }
         $musics = Music::all();
         return view('musics.index' , ['musics' => $musics]);
     }
@@ -68,6 +68,9 @@ class MusicController extends Controller
      */
     public function edit(string $id)
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $music = Music::find($id);
         $nationals = National::all();
         $authors = Author::all();
@@ -96,6 +99,9 @@ class MusicController extends Controller
      */
     public function destroy(string $id)
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $music = Music::find($id);
         $music->delete();
         return redirect('musics');

@@ -11,9 +11,9 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        if (!auth()->check()) {
-            return redirect('/login');
-        }
+        // if (!auth()->check()) {
+        //     return redirect('/login');
+        // }
         $authors = Author::all();
         return view('authors.index' , ['authors' => $authors]);
     }
@@ -34,11 +34,14 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
+        // if (!auth()->check()) {
+        //     return redirect('/login');
+        // }
         $author =new Author();
         $author->name = $request->get('name');
         $author->email = $request->get('email');
         $author->save();
-        return redirect('authors');
+        return redirect('authors/create');
     }
 
     /**
@@ -55,6 +58,12 @@ class AuthorController extends Controller
      */
     public function edit(string $id)
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $author = Author::find($id);
         return view('authors.edit', ['author' => $author]);
     }
@@ -76,6 +85,12 @@ class AuthorController extends Controller
      */
     public function destroy(string $id)
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $author = Author::find($id);
         $author->delete();
         return redirect('authors');

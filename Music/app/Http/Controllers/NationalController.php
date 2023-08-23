@@ -12,9 +12,9 @@ class NationalController extends Controller
      */
     public function index()
     {
-        if (!auth()->check()) {
-            return redirect('/login');
-        }
+        // if (!auth()->check()) {
+        //     return redirect('/login');
+        // }
         $nationals = National::all();
         return view('nationals.index', ['nationals' => $nationals]);
     }
@@ -56,6 +56,9 @@ class NationalController extends Controller
      */
     public function edit(string $id)
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $national = National::find($id);
         return view('nationals.edit', ['national' => $national]);
     }
@@ -77,6 +80,9 @@ class NationalController extends Controller
      */
     public function destroy(string $id)
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $national = National::find($id);
         $national->delete();
         return redirect('/nationals');
