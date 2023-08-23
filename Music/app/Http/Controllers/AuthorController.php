@@ -20,6 +20,9 @@ class AuthorController extends Controller
      */
     public function create()
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         return view('authors.create');
     }
 

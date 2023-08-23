@@ -31,3 +31,4 @@ Route::get('login', [AuthenticateController::class, 'loginIndex'])->name('login'
 Route::post('login', [AuthenticateController::class, 'login']);
 Route::get('register', [AuthenticateController::class, 'registerIndex'])->name('register');
 Route::post('register', [AuthenticateController::class, 'register']);
+Route::get('logout', [AuthenticateController::class, 'logout'])->name('logout');

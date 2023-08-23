@@ -24,6 +24,11 @@ class MusicController extends Controller
      */
     public function create()
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
+
+
         $nationals = National::all();
         $categories = Category::all();
         $authors = Author::all();

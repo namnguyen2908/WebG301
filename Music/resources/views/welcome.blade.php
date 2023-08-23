@@ -66,10 +66,10 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/musics">Home</a>
+                                <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/login">Login</a>
+                                <a class="nav-link" href="http://127.0.0.1:8000/register">Register</a>
                             </li>
                     </div>
                 </div>

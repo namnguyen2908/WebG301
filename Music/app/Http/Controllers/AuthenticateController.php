@@ -54,5 +54,13 @@ class AuthenticateController extends Controller
         auth()->attempt($credentials);
         return redirect('/musics');
     }
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 
 }
