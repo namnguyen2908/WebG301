@@ -11,6 +11,9 @@ class AuthorController extends Controller
      */
     public function index()
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $authors = Author::all();
         return view('authors.index' , ['authors' => $authors]);
     }

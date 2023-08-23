@@ -12,6 +12,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $categories = Category::all();
         return view('categories.index', ['categories' => $categories]);
     }
@@ -24,7 +27,7 @@ class CategoryController extends Controller
         if (!auth()->check()) {
             return redirect('/login');
         }
-        
+
         return view('categories.create');
     }
 

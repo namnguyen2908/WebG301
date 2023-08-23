@@ -12,6 +12,9 @@ class NationalController extends Controller
      */
     public function index()
     {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
         $nationals = National::all();
         return view('nationals.index', ['nationals' => $nationals]);
     }
