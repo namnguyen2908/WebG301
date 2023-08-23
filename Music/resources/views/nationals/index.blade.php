@@ -20,7 +20,7 @@
                     <td>{{$nationals->name}}</td>
                     <td>{{$nationals->area}}</td>
                     <td>
-                        <a href="/nationals/{{$nationals->id}}" class="btn btn-info">Details</a>
+                        
                         <a href="/nationals/{{$nationals->id}}/edit" class="btn btn-primary">Edit</a>
                         <a> <form action="/nationals/{{$nationals->id}}" method="POST">
                             @csrf

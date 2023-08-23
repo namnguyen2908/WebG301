@@ -1,44 +1,39 @@
 @extends ('layouts.app')
 @section ('title', 'Details of '. $music->name)
 @section ('content')
-<div class="container mt-5 mb-5">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="product p-4">
-                            <h5 class="text-uppercase">Music: {{$music->name}}</h5>
-                            <div class="price d-flex flex-row align-items-center">
-                                <div class="ml-2"> <small class="dis-price">Kind of music: </small> <span>{{$music->kindofmusic}}</span> </div>
-                            </div>
-                            <div class="price d-flex flex-row align-items-center">
-                                <div class="ml-2"> <small class="dis-price">Author: </small>
-                                    <span>
-                                        @foreach($music->authors as $author)
-                                        {{ $author->name }}<br>
-                                        @endforeach
-                                    </span>
-                                </div>
 
-                            </div>
-                            <div class="price d-flex flex-row align-items-center">
-                                <div class="ml-2"> <small class="dis-price">National: </small> <span>{{$music->national->name}}</span> </div>
-                            </div>
-                            <div class="price d-flex flex-row align-items-center">
-                                <div class="ml-2"> <small class="dis-price">Category: </small> <span>{{$music->category->name}}</span> </div>
-                            </div>
-                            <div class="price d-flex flex-row align-items-center">
-                                <div class="ml-2"> <small class="dis-price">Singer: </small> <span>{{$music->singer}}</span> </div>
-                            </div>
-                        </div>
-                        <p class="about">Description: <br>{{$music->description}}</p>
-                        <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Dowload</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
-                    </div>
+<div class="bg-dark vh-100 d-flex justify-content-center align-items-center">
+    <div class="container d-flex justify-content-center">
+        
+    <div class="card p-2">
+    <div class="text-center p-image"> <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/3.webp" \\ảnh class="card-img-top" alt="Apple Computer" /> </div>
+            <div class="p-info px-3 py-3">
+                <div>
+                    <h5 class="mb-0">{{$music->name}}</h5>
+                    <span>Category: {{$music->category->name}}</span><br>
+                    <span>Author: 
+                        @foreach($music->authors as $author)
+                        {{ $author->name }}<br>
+                        @endforeach
+                    </span>
+                    <span>National: {{$music->national->name}}</span><br>
+                    <span>Singer: {{$music->singer}}</span><br>
                 </div>
+
+                <div class="heart"> <i class="bx bx-heart"></i> </div>
             </div>
+
+            <div class="p-about">
+                <p>Description: {{$music->description}}</p>
+            </div>
+            <div class="buttons d-flex flex-row gap-3 px-3"><button class="btn btn-outline-danger w-100">Dowload</button> </div>
         </div>
     </div>
 </div>
-</div>
+<style>
+    img.card-img-top {
+    width: 380px;
+    height: auto;
+}
+</style>
 @endsection
