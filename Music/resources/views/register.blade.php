@@ -69,11 +69,7 @@ background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244
                   <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
-
                 
-
-               
-
                 <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
                     Register
