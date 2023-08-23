@@ -1,5 +1,5 @@
 @extends ('layouts.app')
-@section ('title', 'MP3')
+@section ('title', 'KMusic')
 @section ('content')
 <div class="table-responsive">
     <table class="table table-striped
@@ -18,7 +18,7 @@
                 <tr class="table-primary">
                     <td>{{$categories->name}}</td>
 
-                        
+                       <td> 
                         <a href="/categories/{{$categories->id}}/edit" class="btn btn-primary">Edit</a>
                         <a> <form action="/categories/{{$categories->id}}" method="POST">
                             @csrf
