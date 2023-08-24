@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('singer');
             $table->foreignId('national_id')->constrained('nationals');
             $table->foreignId('category_id')->constrained('categories');
+       
             $table->string('description');
             $table->timestamps();
         });
