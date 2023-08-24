@@ -7,21 +7,21 @@
         <label for="" class="form-label">Name:</label>
         <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder=""> 
         <label for="authors" class="form-label">Author:</label><br>
-        <select name="authors[]" id="authors" multiple>
+        <select name="authors[]" style="width:20%" id="authors" multiple>
             @foreach ($authors as $author)
             <option value="{{$author->id}}">{{$author->name}}</option>
             @endforeach
         </select>
         <br>
         <label for="" class="form-label" width = "200px" >National:</label><br>
-        <select name="national_id" id="national_id">
+        <select name="national_id" style="width:20%" id="national_id">
             @foreach($nationals as $national)
             <option value="{{$national->id}}">{{$national->name}}</option>
             @endforeach
         </select> 
         <br>
         <label for="" class="form-label" width = "200px" >Category:</label><br>
-        <select name="category_id" id="category_id">
+        <select name="category_id" style="width:20%" id="category_id">
             @foreach($categories as $category)
             <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
