@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-warning">
   <div class="container-fluid">
-  <a class="navbar-brand" href="http://127.0.0.1:8000/musics">
+  <a class="navbar-brand" href="http://127.0.0.1:8000">
       <img src="https://i.pinimg.com/564x/0f/12/36/0f12361910c69aa7070464560af1c1a6.jpg" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
